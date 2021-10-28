@@ -1,0 +1,55 @@
+<!--
+Katelyn Lindsey
+Color Palette App
+images.html
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>
+			Color Palette App - Images
+		</title>
+
+		<link rel="stylesheet" href="../static/css/style.css">
+
+	</head>
+
+
+	<body>
+
+
+		<div id="wrapper">
+
+
+			<header>
+
+				<h1>
+					Color Palette Generator
+				</h1>
+
+			</header>
+
+
+			<main>
+
+				{% for image in images %}
+				<img src="{{image}}">
+				{% endfor %}
+
+			</main>
+
+
+		</div>
+
+
+	</body>
+
+
+</html>

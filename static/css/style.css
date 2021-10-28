@@ -1,0 +1,22 @@
+/*
+Katelyn Lindsey
+Color Palette App
+style.css
+*/
+
+body {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+input[type=submit] {
+	font-size: 1em;
+}
+
+img {
+	width: 300px;
+	height: auto;
+	display: inline-block;
+}
+
+
