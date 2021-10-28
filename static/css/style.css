@@ -13,10 +13,22 @@ input[type=submit] {
 	font-size: 1em;
 }
 
-img {
+img, input[type=image] {
 	width: 300px;
 	height: auto;
 	display: inline-block;
 }
 
+#big-image {
+	width: 600px;
+}
 
+form {
+	display: inline-block;
+}
+
+.palette-color {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}

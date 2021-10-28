@@ -16,8 +16,7 @@ def get_images(theme):
 	"""
 	Chooses random images from the ../static/images folder
 	based on the given theme (utilizes a service). 
-	Returns a dictionary with a list of filenames and a 
-	list of alt tags.
+	Returns a list of file paths.
 	"""
 
 	# if the theme is random, first choose a random theme

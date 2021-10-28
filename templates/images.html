@@ -39,9 +39,27 @@ images.html
 
 			<main>
 
+				<h2>
+					Click on Image to Generate Palette:
+				</h2>
+
+
+
 				{% for image in images %}
-				<img src="{{image}}">
+
+				<form method="post" action="/palette">
+
+					<input type="image" src="{{image}}" alt="Submit">
+					<input type="hidden" id="theme" name="theme" value="{{theme}}">
+					<input type="hidden" id="filepath" name="filepath" value="{{image}}">
+					<input type="hidden" id="allpaths" name="allpaths" value="{{images}}">
+
+				</form>
+
 				{% endfor %}
+
+
+				{{response}}
 
 			</main>
 
