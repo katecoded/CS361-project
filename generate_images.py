@@ -3,6 +3,7 @@
 # generate_images.py
 
 import random, requests, os, json
+from sys import stderr # for debugging
 
 
 def randomize_theme():

@@ -4,15 +4,48 @@ Color Palette App
 style.css
 */
 
+/*** FONTS USED ***/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+
+
+/***** GENERAL STYLES *****/
 body {
 	text-align: center;
 	font-size: 1.2em;
+	font-family: 'Nunito', sans-serif;
 }
 
+#wrapper {
+	width: 90%;
+	margin: 40px auto;
+}
+
+/***** BUTTON STYLES *****/
 input[type=submit] {
 	font-size: 1em;
+	width: 120px;
+	height: 50px;
+	background-color: white;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-family: 'Nunito', sans-serif;
 }
 
+input[type=submit]:hover {
+	cursor: pointer;
+}
+
+form {
+	display: inline-block;
+}
+
+/***** LINK STYLES *****/
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/***** IMAGE STYLES *****/
 img, input[type=image] {
 	width: 300px;
 	height: auto;
@@ -23,12 +56,17 @@ img, input[type=image] {
 	width: 600px;
 }
 
-form {
+/***** PALETTE STYLES *****/
+.palette-color {
+	width: 120px;
+	height: 120px;
 	display: inline-block;
 }
 
-.palette-color {
-	width: 100px;
-	height: 100px;
-	display: inline-block;
+/*.color-value {
+	visibility: hidden;
 }
+
+.color-value:hover {
+	visibility: visible;
+}*/
