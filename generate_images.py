@@ -11,7 +11,7 @@ def randomize_theme():
 	Returns a random theme from a list of themes.
 	"""
 
-	theme_list = ["ocean", "mountains", "forest"]
+	theme_list = ["ocean", "mountains", "forest", "city"]
 	return random.choice(theme_list)
 
 
