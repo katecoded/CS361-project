@@ -7,6 +7,7 @@
 from PIL import Image
 import os
 import pathlib
+from sys import stderr # for debugging
 
 def generate_palette(image_path):
 	"""
@@ -16,8 +17,8 @@ def generate_palette(image_path):
 	"""
 
 	# get the file path
+	image_path = image_path[3:] # take away ../ at beginning of path
 	image_path = os.path.abspath(image_path)
-	image_path = image_path.replace("\\static", "\\color-palette-app\\static")
 
 	# first, open the image and get its width and height
 	image = Image.open(image_path)
