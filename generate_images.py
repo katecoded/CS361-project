@@ -47,8 +47,10 @@ def get_images(theme):
 	Returns a list of file paths.
 	"""
 
+	theme = theme.lower()
+
 	# if the theme is random, first choose a random theme
-	if theme.lower() == "random":
+	if theme == "random":
 		theme = randomize_theme()
 
 	# next, get a list of all of the images in that theme's directory
