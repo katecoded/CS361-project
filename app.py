@@ -49,10 +49,10 @@ def get_palette():
 	chosen_image_path = request.form.get("filepath")
 	theme = request.form.get("theme")
 
-	# generate a palette from the image received
-	color_list = generate_palette(chosen_image_path)
+	# generate a palette as a dictionary in the form of color_1: [rgba, hex]
+	color_dict = generate_palette(chosen_image_path)
 
-	return render_template("palette.html", image=chosen_image_path, theme=theme, color_1=color_list[0], color_2=color_list[1], color_3=color_list[2], color_4=color_list[3], color_5=color_list[4])
+	return render_template("palette.html", image=chosen_image_path, theme=theme, colors=color_dict)
 
 
 

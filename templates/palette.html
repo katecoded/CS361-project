@@ -39,19 +39,35 @@ palette.html
 
 			<main>
 
-				<img src="{{image}}" alt="An image based on the theme {{theme}}" id="big-image">
 
-			
-
+				<div id="big-image-container">
+					<img src="{{image}}" alt="An image based on the theme {{theme}}" id="big-image">
+				</div>
+				
 
 				<div id="palette">
 
 
+
+					{% for key in colors.keys() %}
+
+					<div class="palette-box">
+
+						<div class="palette-color" style="background-color: rgba{{colors[key][0]}}"></div>
+
+						<div class="palette-value">#{{colors[key][1]}}</div>
+
+					</div>
+
+					{% endfor %}
+
+					<!--
 					<div class="palette-color" id="color-1" style="background-color: rgba{{color_1}}"></div>
 					<div class="palette-color" id="color-2" style="background-color: rgba{{color_2}}"></div>
 					<div class="palette-color" id="color-3" style="background-color: rgba{{color_3}}"></div>
 					<div class="palette-color" id="color-4" style="background-color: rgba{{color_4}}"></div>
 					<div class="palette-color" id="color-5" style="background-color: rgba{{color_5}}"></div>
+					-->
 
 
 				</div>
