@@ -70,7 +70,11 @@ img, input[type=image] {
 }
 
 .palette-color {
-	width: 120px;
-	height: 120px;
+	width: 140px;
+	height: 140px;
+	margin: none;
+}
+
+.palette-value {
 	margin: none;
 }

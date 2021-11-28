@@ -19,6 +19,9 @@ palette.html
 
 		<link rel="stylesheet" href="../static/css/style.css">
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../static/js/script.js"></script>
+
 	</head>
 
 
@@ -55,19 +58,15 @@ palette.html
 
 						<div class="palette-color" style="background-color: rgba{{colors[key][0]}}"></div>
 
-						<div class="palette-value">#{{colors[key][1]}}</div>
+						<div class="palette-value" id="{{key}}" data-colortype="hex">#{{colors[key][1]}}</div>
 
 					</div>
 
 					{% endfor %}
 
-					<!--
-					<div class="palette-color" id="color-1" style="background-color: rgba{{color_1}}"></div>
-					<div class="palette-color" id="color-2" style="background-color: rgba{{color_2}}"></div>
-					<div class="palette-color" id="color-3" style="background-color: rgba{{color_3}}"></div>
-					<div class="palette-color" id="color-4" style="background-color: rgba{{color_4}}"></div>
-					<div class="palette-color" id="color-5" style="background-color: rgba{{color_5}}"></div>
-					-->
+
+					<br/>
+					<button id="toggle-rgb-hex" data-colors="{{colors}}">Toggle RGB/Hex</button>
 
 
 				</div>
