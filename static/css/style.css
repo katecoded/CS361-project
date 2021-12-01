@@ -5,7 +5,7 @@ style.css
 */
 
 /*** FONTS USED ***/
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap');
 
 
 /***** GENERAL STYLES *****/
@@ -17,22 +17,38 @@ body {
 
 #wrapper {
 	width: 90%;
-	margin: 40px auto;
+	margin: 50px auto;
+	padding: 10px;
+	padding-bottom: 40px;
+	/*background-color: #F5F5F5;*/
 }
 
+h2 {
+	font-weight: 600;
+}
+
+
 /***** BUTTON STYLES *****/
-input[type=submit] {
+input[type=submit], button {
 	font-size: 1em;
 	width: 120px;
 	height: 50px;
-	background-color: white;
+	background-color: #FFFFFF;
 	margin-right: 10px;
 	margin-left: 10px;
 	font-family: 'Nunito', sans-serif;
+	transition: 0.2s;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover, button:hover {
 	cursor: pointer;
+	background-color: #F5F5F5;
+}
+
+button {
+	font-size: 0.8em;
+	width: 140px;
+	height: 40px;
 }
 
 form {

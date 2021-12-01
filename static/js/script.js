@@ -37,7 +37,7 @@ $(function() {
 			for(var key in colors) {
 				$("#" + key).data("colortype", "rgb");
 				newText = colors[key][0];
-				$("#" + key).text("RGB" + newText);
+				$("#" + key).text(newText);
 			}
 			console.log("changed to rgb");
 		}
