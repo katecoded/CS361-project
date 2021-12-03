@@ -1,11 +1,12 @@
 # Katelyn Lindsey
 # Color Palette App
 # generate_images.py
+# This program generates images from the project's images/ folder 
+# using a randomizer service.
 
 import random, requests, os, json
 from sys import stderr # for debugging
 
-# seed the random generator
 random.seed()
 
 
@@ -23,7 +24,7 @@ def get_image_list(theme):
 	Returns a list of image file names based on the theme.
 	"""
 
-	# first, get path to the relevant images folder based on theme
+	# get absolute path to the relevant images folder
 	image_folder = os.path.abspath("static/images/" + str(theme))
 
 	# return a list of the images in that directory
@@ -32,7 +33,7 @@ def get_image_list(theme):
 
 def get_amount(amount):
 	"""
-	Returns an integer amount based on the string given.
+	Returns an integer amount based on the given string.
 	"""
 
 	if amount == "small":
@@ -45,11 +46,11 @@ def get_amount(amount):
 
 def get_relative_image_paths(image_list, theme):
 	"""
-	Returns the given list to have paths usable in the html pages.
+	Returns the given image list altered to have image paths relative to
+	the HTML pages.
 	"""
 
 	for index in range(len(image_list)):
-		# replace the file name with the full file path
 		rel_path = "../static/images/" + str(theme) + "/" + str(image_list[index])
 		image_list[index] = rel_path
 
@@ -58,33 +59,29 @@ def get_relative_image_paths(image_list, theme):
 
 def get_images(theme, amount):
 	"""
-	Chooses random images from the ../static/images folder
-	based on the given theme (utilizes a service). 
-	Returns a list of file paths.
+	Chooses random images from the ../static/images folder based
+	on the given theme (str) and amount of images (str) (utilizes a 
+	randomizer service). 
+	Returns a list of file paths relative to the HTML pages.
 	"""
 
 	theme = theme.lower()
+	amount = amount.lower()
 
-	# if the theme is random, choose a random theme and amount
 	if theme == "random":
 		theme = randomize_theme()
 
-	# next, get a list of all of the images in that theme's directory
-	image_list = get_image_list(theme)
-
-	# get the integer amount of images wanted
-	amount = amount.lower()
+	# get an integer based on the given string amount
 	amount = get_amount(amount)
 
-	# format the JSON for the request
+	image_list = get_image_list(theme)
+
 	req_data = {"filenames":image_list, "num_wanted":amount}
 
 	# request random filenames from service based on the given theme
 	response = requests.get("https://services-361.herokuapp.com/api/randomizer", json=req_data)
 	response = response.json()
 
-	# get the relative paths of the filenames (relative to static html pages)
 	chosen_images = get_relative_image_paths(response, theme)
 
-	# return the response
 	return chosen_images

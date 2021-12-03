@@ -32,6 +32,7 @@ def remove_0x(color_value):
 	"""
 	Takes a hex value (string) and removes the 0x at the beginning, 
 	also adding a 0 at the beginning if the hex has only one value.
+	Returns the resulting string.
 	"""
 
 	color_value = color_value[2:]
@@ -89,11 +90,12 @@ def create_color_dictionary(rgb_list, hex_list):
 def generate_palette(image_path):
 	"""
 	Takes a path to an image and uses its pixel data in
-	order to get a color palette. Returns a list of tuples
-	of color values.
+	order to get a color palette with five colors. 
+	Returns a dictionary of colors with color names as the
+	keys and a list of [RGB, hex] color values as the value.
 	"""
 
-	# get the file path
+	# get the absolute file path
 	image_path = image_path[3:] # take away ../ at beginning of path
 	image_path = os.path.abspath(image_path)
 
@@ -107,4 +109,5 @@ def generate_palette(image_path):
 
 	# create a dicionary out of the color values to return
 	color_dict = create_color_dictionary(rgb_list, hex_list)
+
 	return color_dict

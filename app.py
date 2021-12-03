@@ -18,6 +18,7 @@ def intro_page():
 	Displays the main page of the website where users can choose 
 	to create a palette.
 	"""
+
 	return render_template("index.html")
 
 
@@ -27,6 +28,7 @@ def choose_theme():
 	"""
 	Allows the user to choose a theme for their palette.
 	"""
+
 	return render_template("choose_theme.html")
 
 
@@ -34,9 +36,10 @@ def choose_theme():
 @app.route("/choose_amount", methods=["GET"])
 def choose_amount():
 	"""
-	Allows the user to choose the amount of images they can
-	choose from.
+	Allows the user to choose the amount of images they would
+	like to choose from.
 	"""
+
 	theme = request.args.get("theme")
 
 	return render_template("choose_amount.html", theme=theme)
@@ -55,7 +58,6 @@ def display_images():
 	# request paths to random images from service using theme and amount requested
 	image_files = get_images(theme, amount)
 
-	# render the page with the generated images
 	return render_template("images.html", images=image_files, theme=theme, amount=amount)
 
 
@@ -66,7 +68,6 @@ def get_palette():
 	Generates a palette using the given image file path.
 	"""
 
-	# store the image path clicked on and the theme
 	chosen_image_path = request.form.get("filepath")
 	theme = request.form.get("theme")
 
