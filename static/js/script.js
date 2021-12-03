@@ -44,3 +44,17 @@ $(function() {
 
 	});
 });
+
+
+/* start over */
+function startOver(form) {
+	var answer = confirm("You may not see these images again. Are you sure?")
+
+	if(answer == true) {
+		form.method = "get";
+		form.action = "/";
+		return true;
+	} else {
+		return false;
+	}
+}

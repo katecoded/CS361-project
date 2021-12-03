@@ -1,0 +1,76 @@
+<!--
+Katelyn Lindsey
+Color Palette App
+choose_theme.html
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>
+			Color Palette App
+		</title>
+
+		<link rel="stylesheet" href="../static/css/style.css">
+
+	</head>
+
+
+	<body>
+
+
+		<div id="wrapper">
+
+
+			<header>
+
+				<h1>
+					Color Palette Generator
+				</h1>
+
+			</header>
+
+
+			<main>
+
+				<h2>
+					Choose a theme:
+				</h2>
+
+				<form method="get" action="/choose_amount">
+
+					<input type="submit" name="theme" value="Forest"/>
+					<input type="submit" name="theme" value="Ocean"/>
+					<input type="submit" name="theme" value="Mountains"/>
+					<input type="submit" name="theme" value="City"/>
+
+				</form>
+
+				<br/><br/>
+				OR
+				<br/><br/>
+
+				<form method="get" action="/images">
+
+					<input type="submit" name="theme" value="Random"/>
+					<br/>
+					(Skip the choices - generate random images!)
+
+				</form>
+
+			</main>
+
+
+		</div>
+
+
+	</body>
+
+
+</html>

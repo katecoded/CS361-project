@@ -3,7 +3,7 @@
 # app.py
 
 from flask import Flask, render_template, request
-import sys, os
+from sys import stderr # for debugging
 from generate_images import get_images
 from generate_palette import generate_palette
 
@@ -16,9 +16,32 @@ app = Flask(__name__, static_url_path='/static')
 def intro_page():
 	"""
 	Displays the main page of the website where users can choose 
-	to look at random images.
+	to create a palette.
 	"""
 	return render_template("index.html")
+
+
+# route for choosing an image theme
+@app.route("/choose_theme", methods=["GET"])
+def choose_theme():
+	"""
+	Allows the user to choose a theme for their palette.
+	"""
+	return render_template("choose_theme.html")
+
+
+# route for choosing the amount of images
+@app.route("/choose_amount", methods=["GET"])
+def choose_amount():
+	"""
+	Allows the user to choose the amount of images they can
+	choose from.
+	"""
+
+	# store theme
+	theme = request.args.get("theme")
+
+	return render_template("choose_amount.html", theme=theme)
 
 
 # route for displaying all images
@@ -28,14 +51,14 @@ def display_images():
 	Displays the randomly generated images to the user.
 	"""
 
-	# store the theme
 	theme = request.args.get("theme")
+	amount = request.args.get("amount")
 	
-	# request paths to random images from service using theme requested
-	image_files = get_images(theme)
+	# request paths to random images from service using theme and amount requested
+	image_files = get_images(theme, amount)
 
 	# render the page with the generated images
-	return render_template("images.html", images=image_files, theme=theme)
+	return render_template("images.html", images=image_files, theme=theme, amount=amount)
 
 
 # route for displaying color palette when image is clicked

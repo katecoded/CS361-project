@@ -1,7 +1,7 @@
 <!--
 Katelyn Lindsey
 Color Palette App
-index.html
+choose_amount.html
 -->
 
 <!DOCTYPE html>
@@ -34,19 +34,22 @@ index.html
 					Color Palette Generator
 				</h1>
 
-				<div id="blurb">
-					This website generates color palettes based on random images.
-					<br/>All images displayed are from <a href="https://pixabay.com/">Pixabay</a> and are copyright free.
-				</div>
-
 			</header>
 
 
 			<main>
 
-				<form method="get" action="/choose_theme">
+				<h2>
+					Choose an amount:
+				</h2>
 
-					<input type="submit" name="begin" id="begin" value="Create a Palette"/>
+				<form method="get" action="/images">
+
+					<input type="submit" name="amount" value="Small"/>
+					<input type="submit" name="amount" value="Medium"/>
+					<input type="submit" name="amount" value="Large"/>
+
+					<input type="hidden" id="theme" name="theme" value="{{theme}}">
 
 				</form>
 

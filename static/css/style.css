@@ -27,15 +27,17 @@ h2 {
 	font-weight: 600;
 }
 
+#blurb {
+	margin-bottom: 30px;
+}
+
 
 /***** BUTTON STYLES *****/
 input[type=submit], button {
 	font-size: 1em;
-	width: 120px;
-	height: 50px;
+	padding: 10px 20px;
 	background-color: #FFFFFF;
-	margin-right: 10px;
-	margin-left: 10px;
+	margin: 10px;
 	font-family: 'Nunito', sans-serif;
 	transition: 0.2s;
 }
@@ -47,13 +49,16 @@ input[type=submit]:hover, button:hover {
 
 button {
 	font-size: 0.8em;
-	width: 140px;
-	height: 40px;
+	padding: 10px 20px;
 }
 
 form {
 	display: inline-block;
 }
+
+/*#begin {
+	width: 160px;
+}*/
 
 /***** LINK STYLES *****/
 a {

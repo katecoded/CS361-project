@@ -5,6 +5,9 @@
 import random, requests, os, json
 from sys import stderr # for debugging
 
+# seed the random generator
+random.seed()
+
 
 def randomize_theme():
 	"""
@@ -13,6 +16,15 @@ def randomize_theme():
 
 	theme_list = ["ocean", "mountains", "forest", "city"]
 	return random.choice(theme_list)
+
+
+def randomize_amount():
+	"""
+	Returns a random amount (string) from a list of amounts.
+	"""
+
+	amount_list = ["small", "medium", "large"]
+	return random.choice(amount_list)
 
 
 def get_image_list(theme):
@@ -25,6 +37,19 @@ def get_image_list(theme):
 
 	# return a list of the images in that directory
 	return os.listdir(image_folder)
+
+
+def get_amount(amount):
+	"""
+	Returns an integer amount based on the string given.
+	"""
+
+	if amount == "small":
+		return random.randint(2, 4)
+	elif amount == "medium":
+		return random.randint(5, 7)
+	else:
+		return random.randint(8, 10)
 
 
 def get_relative_image_paths(image_list, theme):
@@ -40,7 +65,7 @@ def get_relative_image_paths(image_list, theme):
 	return image_list
 
 
-def get_images(theme):
+def get_images(theme, amount):
 	"""
 	Chooses random images from the ../static/images folder
 	based on the given theme (utilizes a service). 
@@ -49,15 +74,20 @@ def get_images(theme):
 
 	theme = theme.lower()
 
-	# if the theme is random, first choose a random theme
+	# if the theme is random, choose a random theme and amount
 	if theme == "random":
 		theme = randomize_theme()
+		amount = randomize_amount()
 
 	# next, get a list of all of the images in that theme's directory
 	image_list = get_image_list(theme)
 
+	# get the integer amount of images wanted
+	amount = amount.lower()
+	amount = get_amount(amount)
+
 	# format the JSON for the request
-	req_data = {"filenames":image_list, "num_wanted":6}
+	req_data = {"filenames":image_list, "num_wanted":amount}
 
 	# request random filenames from service based on the given theme
 	response = requests.get("https://services-361.herokuapp.com/api/randomizer", json=req_data)

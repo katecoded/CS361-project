@@ -19,6 +19,9 @@ images.html
 
 		<link rel="stylesheet" href="../static/css/style.css">
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../static/js/script.js"></script>
+
 	</head>
 
 
@@ -51,6 +54,7 @@ images.html
 
 					<input type="image" src="{{image}}" alt="Submit">
 					<input type="hidden" id="theme" name="theme" value="{{theme}}">
+					<input type="hidden" id="amount" name="amount" value="{{amount}}">
 					<input type="hidden" id="filepath" name="filepath" value="{{image}}">
 					<input type="hidden" id="allpaths" name="allpaths" value="{{images}}">
 
@@ -62,6 +66,13 @@ images.html
 				<div>
 					(Click the refresh button to randomize the images!)
 				</div>
+
+				<br/><br/>
+				<form onsubmit="return startOver(this)">
+
+					<input type="submit" name="startover" value="Start Over"/>
+
+				</form>
 
 			</main>
 
