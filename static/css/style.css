@@ -31,7 +31,6 @@ h2 {
 	margin-bottom: 30px;
 }
 
-
 /***** BUTTON STYLES *****/
 input[type=submit], button {
 	font-size: 1em;
@@ -55,10 +54,6 @@ button {
 form {
 	display: inline-block;
 }
-
-/*#begin {
-	width: 160px;
-}*/
 
 /***** LINK STYLES *****/
 a {

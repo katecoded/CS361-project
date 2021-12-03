@@ -35,7 +35,7 @@ index.html
 				</h1>
 
 				<div id="blurb">
-					This website generates color palettes based on random images.
+					This website generates color palettes based on images.
 					<br/>All images displayed are from <a href="https://pixabay.com/">Pixabay</a> and are copyright free.
 				</div>
 
@@ -46,7 +46,21 @@ index.html
 
 				<form method="get" action="/choose_theme">
 
-					<input type="submit" name="begin" id="begin" value="Create a Palette"/>
+					<input type="submit" name="begin" value="Choose a Theme"/>
+
+				</form>
+
+				<br/><br/>
+				OR
+				<br/><br/>
+
+				<form method="get" action="/images">
+
+					<input type="submit" name="begin" value="Surprise Me!">
+					<input type="hidden" name="theme" value="Random"/>
+					<input type="hidden" name="amount" value="Medium"/>
+					<br/>
+					(Skip the choices - generate random images!)
 
 				</form>
 

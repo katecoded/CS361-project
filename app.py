@@ -37,8 +37,6 @@ def choose_amount():
 	Allows the user to choose the amount of images they can
 	choose from.
 	"""
-
-	# store theme
 	theme = request.args.get("theme")
 
 	return render_template("choose_amount.html", theme=theme)

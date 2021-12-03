@@ -18,15 +18,6 @@ def randomize_theme():
 	return random.choice(theme_list)
 
 
-def randomize_amount():
-	"""
-	Returns a random amount (string) from a list of amounts.
-	"""
-
-	amount_list = ["small", "medium", "large"]
-	return random.choice(amount_list)
-
-
 def get_image_list(theme):
 	"""
 	Returns a list of image file names based on the theme.
@@ -77,7 +68,6 @@ def get_images(theme, amount):
 	# if the theme is random, choose a random theme and amount
 	if theme == "random":
 		theme = randomize_theme()
-		amount = randomize_amount()
 
 	# next, get a list of all of the images in that theme's directory
 	image_list = get_image_list(theme)
